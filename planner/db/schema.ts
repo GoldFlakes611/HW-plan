@@ -7,3 +7,9 @@ export const assignments = sqliteTable('assignments', {
  course: text('course').notNull().default(''),
  due: text('due').notNull(),
 }, table => [index('idx_assignments_user_due').on(table.userId, table.due)]);
+
+export const profiles = sqliteTable('profiles', {
+ userId: text('user_id').primaryKey(),
+ displayName: text('display_name').notNull(),
+ createdAt: text('created_at').notNull(),
+});
